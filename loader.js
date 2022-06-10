@@ -21,7 +21,7 @@ if (typeof CHANNEL_DEBUG === "undefined") var CHANNEL_DEBUG = false;
 
 var IMABOT = (CLIENT.name.toLowerCase() == BOT_NICK.toLowerCase());
 
-let Base_URL = "https://raw.githubusercontent.com/JackAndChat/CyTube/main/www/";
+let Base_URL = "https://cdn.jsdelivr.net/gh/jackandchat/cytube@main/";
 let Room_URL = Base_URL + Room_ID + "/";
 let Logo_URL =  Room_URL + "logo.png";
 let Favicon_URL = Room_URL + "favicon.png";
