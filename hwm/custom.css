@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+#motdwrap {
+  font-family: "Crimson Text", Georgia, Utopia, Palatino, serif;
+  margin-bottom:4px;
+  padding:4px;
+  padding-left:20px;
+}
+
+@media only screen and (min-width: 800px) {
+  #motdwrap {
+    font-size: 14px;
+    background-image: url(https://jackandchat.net/www/hwm/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+  }
+} 
+
+.ytapiplayer {
+  max-width: 854px;
+  max-height: 480px;
+}
+
+.adminnick, .userlist_owner, .userlist_owner > .username { color: DeepPink !important; }
+.userlist_op, .userlist_op > .username { color: DeepSkyBlue !important; }
+
+.profile-box{background-color:#bf935a;color:white}
+#chanjs-allow-prompt > a, #chanjs-allow-prompt > button, #chanjs-deny{display:none}
+#chanjs-allow-prompt > span, #chanjs-allow-prompt > div.checkbox > label{font-size:14px}
+#chanjs-allow-prompt > div.checkbox:before{content:'Required to Chat';font-size:14px !important;font-weight:600 !important}
+#chanjs-allow{font-size:0px;background-color:green;border-radius:15px;background-image:none;padding:10px}
+#chanjs-allow:before{font-size:14px !important;content:'ALLOW'}
