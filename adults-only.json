@@ -3,10 +3,10 @@
   "duration": 3629,
   "sources": [
     {
-      "url": "https://jackandchat.net/www/intermission.mp3",
+      "url": "https://raw.githubusercontent.com/JackAndChat/CyTube/main/intermission.mp3",
       "contentType": "audio/mpeg",
       "quality": 480
     }
   ],
-  "thumbnail": "https://jackandchat.net/www/adults-only.png"
+  "thumbnail": "https://raw.githubusercontent.com/JackAndChat/CyTube/main/adults-only.png"
 }
