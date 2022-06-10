@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+body {
+  line-height: 1.2;
+  color: #dfdfdf;
+  overflow-x: hidden;
+}
+
+.container { width: 100% }
+.container, .container-fluid {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#motdwrap {
+  margin-bottom: 4px;
+  padding: 4px;
+  padding-left: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+}
+
+@media only screen and (min-width: 800px) {
+  #motdwrap {
+  }
+}
+
+#currenttitle {
+  color: Gold;
+  padding-left: 8px;
+}
+
+#mediarefresh: before {
+  content: "Refresh Video";
+  padding-right: 8px;
+}
+#voteskip: before {
+  content: "Vote to Skip";
+  padding-right: 4px;
+}
+
+#showsearch, #showcustomembed, #showplaylistmanager, #qlockbtn, #getplaylist {
+  visibility: hidden;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.channel-emote {
+  max-width: 80px;
+  max-height: 80px;
+  vertical-align: bottom;
+}
+
+#chatwrap, #videowrap {
+  margin-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#chatwrap, .pm-buffer {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  font-size: 14px;
+  font-weight: 100;
+  vertical-align: baseline;
+}
+#chatwrap em, .pm-buffer em {
+  color: White;
+  font-weight: 400;
+  font-style: normal;
+}
+.pm-gone {
+  color: black !important;
+  text-decoration: white line-through;
+}
+
+#chatline {
+  height: 2em;
+}
+
+#userlist {
+  width: 22%;
+  font-size: 75%;
+  padding-left: 2px;
+  color: #d4b791;
+}
+.userlist_afk .glyphicon {
+  display: inline;
+  color: #bf935a;
+  padding-right: 2px;
+}
+.userlist_afk { color: #bf935a; }
+
+#messagebuffer .server-whisper {
+  line-height: 0;
+  font-size: 75%;
+  color: DeepSkyBlue;
+}
+#messagebuffer .timestamp, .pm-buffer .timestamp {
+  line-height: 0;
+  font-size: 75%;
+  font-style: normal;
+  color: #808080;
+}
+#messagebuffer .action {
+  color: SpringGreen;
+}
+#messagebuffer .server-msg-reconnect, #messagebuffer .server-msg-disconnect {
+  line-height: 1;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+#messagebuffer .username, .pm-buffer .username {
+  color: #d4b791;
+  font-size: 75%;
+  font-weight: 100;
+  font-stretch: ultra-condensed;
+}
+
+/*
+.adminnick, .userlist_owner, .userlist_owner > .username { color: Green !important; }
+.userlist_op, .userlist_op > .username { color: DeepSkyBlue !important; }
+*/
+
+#pollwrap h3 {
+  color: DeepSkyBlue !important;
+  font-weight: bold;
+  font-size: 80%;
+}
+.poll-notify {
+  color: DeepSkyBlue !important;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.credit, .credit a {
+  color: DarkGray;
+  font-size: 50%;
+}
+
+.pm-panel, .pm-panel-placeholder { 
+  width: 30%;
+  min-width: 250px;
+  opacity: 0.8;
+}
+.pm-panel:hover {opacity:1}
+
+.pm-panel > .panel-heading {
+  color: white;
+  font-weight: bold;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.profile-box {
+  color: white;
+  background-color: #bf935a;
+}
+
+img.zoomin { 
+  max-height: 96px;
+} 
+
+/****************************************************************************************************/
+.throb_text { animation: throbber 4s ease infinite; }
+@keyframes throbber { 0% { opacity: 1.0; } 50% { opacity: 0.4; } 100% { opacity: 1.0; } } 
+
+/* PM Chat */
+.panel-default > .panel-heading { background-color: #bf935a; }
+.panel-primary > .panel-heading { /* ALERT */
+  background-color: #bf935a;
+  animation: blinker 1s ease infinite;
+}
+@keyframes blinker { 50% { background-color: #f2d00d; } }
