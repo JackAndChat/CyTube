@@ -50,12 +50,12 @@ window.socket.on("pm", window[CHANNEL.name].doBotReply);
 // ##################################################################################################################################
 
 window[CHANNEL.name].userJoin = function(data){
-  debugData("roombot.userJoin", data);
+  debugData("#####  roombot.userJoin", data);
   if (data.rank > 1) return;  // Moderator
   // if (data.name.toLowerCase() == CLIENT.name.toLowerCase()) return; // Ignore yourself
 
   let alias = data.meta.aliases.join(",").toLowerCase();
-  debugData("roombot.userJoin.alias", alias);
+  debugData("#####  roombot.userJoin.alias", alias);
 
   if (data.name.toLowerCase().indexOf("guest") >= 0) { // Shadow Mute "guests"
     window.socket.emit("chatMsg", { msg: "/smute " + data.name, meta: {} });
@@ -90,6 +90,15 @@ window.socket.on("addUser", window[CHANNEL.name].userJoin);
 
 // ##################################################################################################################################
 
+window[CHANNEL.name].userCount = function(data){
+  if (data <= 1) {
+   window.socket.emit("chatMsg", { msg: "/clear", meta: {} });
+  }
+}
+// window.socket.on("usercount", window[CHANNEL.name].userCount);
+
+// ##################################################################################################################################
+
 window.socket.on("chatMsg", (data)=>{ 
   if (data.username.startsWith('[')) return; // Ignore Server Messages
   debugData("roombot.chatMsg", data);
@@ -101,41 +110,10 @@ window.socket.on("chatMsg", (data)=>{
   if (user.rank > 1) return;  // Moderator
   
   if ((data.msg.toLowerCase().indexOf("kosmi") >= 0) ||
-      (data.msg.toLowerCase().indexOf("cytu.be") >= 0) ||
-      (data.msg.toLowerCase().indexOf("jit.si") >= 0)) {
+      (data.msg.toLowerCase().indexOf("cytu.be") >= 0)) {
     window.socket.emit("chatMsg", { msg: "/smute " + data.username, meta: {} });
   }
 });
-
-// ##################################################################################################################################
-
-const pauseVideo = function(userCount){
-  let $entry = $('#queue > li.queue_entry:contains("Video Paused")'); 
-  let uid = $entry.data("uid") || -1; 
-  debugData("roombot.pauseVideo.uid", uid);
-
-  if (uid > 0) { // Video Paused
-    if (userCount > 1) { // Restart Videos
-      debugData("roombot.pauseVideo.Restart", 0);
-      try { socket.emit("delete", uid) } catch (e){} 
-    }
-  }
-  else if (userCount <= 1) { // Pause Videos
-    debugData("roombot.shufflePlaylist");
-    window.socket.emit("shufflePlaylist");
-    
-    debugData("roombot.clear");
-    window.socket.emit("chatMsg", { msg: "/clear", meta: {} });
-    
-    debugData("roombot.queue");
-    window.socket.emit("queue", { id: "https://https://raw.githubusercontent.com/JackAndChat/CyTube/main/www/adults-only.json", pos:"end", type:"cm", "temp":true });
-    
-    socket.once("queue",(data)=>{
-      debugData("roombot.jumpTo.Temp", data);
-      window.socket.emit("jumpTo", data.item.uid);
-    });
-  }
-}
 
 // ##################################################################################################################################
 // Replacement Callbacks
@@ -202,17 +180,19 @@ const BOT_Callbacks = {
     return;
   },
 
-  usercount: function(userCount) {
-    debugData("roombot.userCount", userCount);
+  usercount: function(count) {
+    debugData("roombot.usercount", count);
     
-    CHANNEL.usercount = userCount;
-    var countText = userCount + " connected user";
-    if(userCount != 1) {
-      countText += "s";
+    CHANNEL.usercount = count;
+    var text = count + " connected user";
+    if(count != 1) {
+      text += "s";
     }
-    $("#usercount").text(countText);
-
-    pauseVideo(userCount);
+    $("#usercount").text(text);
+    
+    if (count <= 1) {
+     window.socket.emit("chatMsg", { msg: "/clear", meta: {} });
+    }
   }
 }
 
@@ -285,12 +265,8 @@ setInterval(()=>{
 
 //  DOCUMENT READY
 $(document).ready(function() {
-  debugData("roombot.documentReady");
 
   window[CHANNEL.name].setupBOT_Callbacks();
-  
-   let userCount = $("#userlist .userlist_item").length;
-   pauseVideo(userCount);
   
 /*  
   window.socket.removeAllListeners("error");
