@@ -57,7 +57,7 @@ window[CHANNEL.name].userJoin = function(data){
   let alias = data.meta.aliases.join(",").toLowerCase();
   debugData("roombot.userJoin.alias", alias);
 
-  if (data.name.toLowerCase().indexOf("guest") >= 0) { // Shadow Mute "guests"
+  if (MUTE_GUESTS && (data.name.toLowerCase().indexOf("guest") >= 0)) { // Shadow Mute "guests"
     window.socket.emit("chatMsg", { msg: "/smute " + data.name, meta: {} });
     window.socket.emit("pm", { to: data.name, msg: window[CHANNEL.name].botPrefixIgnore + "FYI: Guest nicks are *Muted* in chat.", meta: {} });
   }
