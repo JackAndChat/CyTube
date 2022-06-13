@@ -10,7 +10,7 @@
 @media only screen and (min-width: 800px) {
   #motdwrap {
     font-size: 14px;
-    background-image: url(https://https://raw.githubusercontent.com/JackAndChat/CyTube/main/www/hwm/logo.png);
+    background-image: url(https://cdn.statically.io/gh/jackandchat/cytube/main/www/hwm/logo.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: right;

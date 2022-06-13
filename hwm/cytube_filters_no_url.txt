@@ -1,0 +1,48 @@
+[
+{"name":"1_dau","source":"(^|\\W)(dau)('?)(s?)($|\\W)","flags":"gi","replace":"\\1<em>\\2ghter</em>\\3\\4\\5","active":true,"filterlinks":false},
+{"name":"2_mom","source":"(^|\\W)(mom's|moms|mom)($|\\W)","flags":"gi","replace":"\\1<em>\\2</em>\\3","active":true,"filterlinks":false},
+{"name":"3_family","source":
+  "(^|\\W)(step|gran|teen|dad|father|momm|mum|mother|son|sis|dau|aunt|uncle|niece|nephew)([\\w]{0,8})(ies|'s)?",
+  "flags":"gi","replace":"\\1<em>\\2\\3</em>","active":true,"filterlinks":false},
+
+{"name":"African","source":"nig+er","flags":"gi","replace":"African","active":true,"filterlinks":false},
+{"name":"BBC","source":"BBC","flags":"gi","replace":"BBC","active":true,"filterlinks":false},
+{"name":"bitch","source":"(^|\\W)b.?t.?c.?h","flags":"gi","replace":"\\1angel","active":true,"filterlinks":false},
+{"name":"butterface","source":"butterface","flags":"gi","replace":"sexy","active":true,"filterlinks":false},
+{"name":"BWC","source":"BWC","flags":"gi","replace":"BWC","active":true,"filterlinks":false},
+{"name":"cunt","source":"c.?u.?n.?t","flags":"gi","replace":"cunny","active":true,"filterlinks":false},
+{"name":"PAWG","source":"PAWG","flags":"gi","replace":"butt","active":true,"filterlinks":false},
+{"name":"pead0","source":"peado","flags":"gi","replace":"ped0","active":true,"filterlinks":false},
+{"name":"ped0","source":"pedo","flags":"gi","replace":"ped0","active":true,"filterlinks":false},
+{"name":"skank","source":"skank","flags":"gi","replace":"angel","active":true,"filterlinks":false},
+{"name":"slag","source":"slag","flags":"gi","replace":"angel","active":true,"filterlinks":false},
+{"name":"udder","source":"udder","flags":"gi","replace":"boob","active":true,"filterlinks":false},
+{"name":"whore","source":"w.?h.?[o0].?r.?[e3]","flags":"gi","replace":"slut","active":true,"filterlinks":false},
+{"name":"young","source":"(yung|yng)","flags":"gi","replace":"young","active":true,"filterlinks":false},
+
+{"name":"X_wickr","source":"w\\W?i\\W?c\\W?k\\W?r","flags":"gi","replace":"@#$%!","active":true,"filterlinks":true},
+{"name":"X_tox","source":"t\\W?o\\W?x","flags":"gi","replace":"@#$%!","active":true,"filterlinks":true},
+
+{"name":"Y_blue","source":":blue:(.*)","flags":"gi","replace":"<span style='color:DeepSkyBlue'>\\1</span>","active":true,"filterlinks":false},
+{"name":"Y_bold","source":"_(.+?)_","flags":"gi","replace":"<strong>\\1</strong>","active":true,"filterlinks":false},
+{"name":"Y_boldOFF","source":"\\[/b\\]","flags":"gi","replace":"</strong>","active":true,"filterlinks":false},
+{"name":"Y_boldON","source":"\\[b\\]","flags":"gi","replace":"<strong>","active":true,"filterlinks":false},
+{"name":"Y_cyan","source":":cyan:(.*)","flags":"gi","replace":"<span style='color:Cyan'>\\1</span>","active":true,"filterlinks":false},
+{"name":"Y_emOFF","source":"\\[/i\\]","flags":"gi","replace":"</em>","active":true,"filterlinks":false},
+{"name":"Y_emON","source":"\\[i\\]","flags":"gi","replace":"<em>","active":true,"filterlinks":false},
+{"name":"Y_gray","source":":gray:(.*)","flags":"gi","replace":"<span style='color:Gray'>\\1</span>","active":true,"filterlinks":false},
+{"name":"Y_green","source":":green:(.*)","flags":"gi","replace":"<span style='color:SpringGreen'>\\1</span>","active":true,"filterlinks":false},
+{"name":"Y_high","source":"~(.+?)~","flags":"gi","replace":"<span style='font-weight:600;color:Gold'>\\1</span>","active":true,"filterlinks":false},
+{"name":"Y_italic","source":"\\*(.+?)\\*","flags":"gi","replace":"<em>\\1</em>","active":true,"filterlinks":false},
+{"name":"Y_red","source":":red:(.*)","flags":"gi","replace":"<span style='color:Crimson'>\\1</span>","active":true,"filterlinks":false},
+{"name":"Y_yellow","source":":yellow:(.*)","flags":"gi","replace":"<span style='color:Gold'>\\1</span>","active":true,"filterlinks":false},
+{"name":"Y_zstop","source":":z:","flags":"gi","replace":"</span><span>","active":true,"filterlinks":false},
+{"name":"Y_hot","source":"(^|\\W)(hott+)($|\\W)","flags":"gi","replace":"\\1\\2 :fire: ","active":true,"filterlinks":false},
+
+{"name":"Z_lisa1","source":"LisaQT","flags":"gi","replace":"LisaQT","active":true,"filterlinks":false},
+{"name":"Z_lisa2","source":"(^|\\W)l\\W?i\\W?s\\W?a(\\w*)","flags":"gi","replace":"\\1<span class='adminnick'>Lisa\\2</span>","active":true,"filterlinks":false},
+
+{"name":"nourl","source":"\\b(https?\\:\\/\\/)?((\\w+\\.)*\\w+\\/[\\S\\B]*)","flags":"gi","replace":":)","active":true,"filterlinks":true},
+
+{"name":"Z_9999","source":"xyzzy","flags":"gi","replace":"XYZZY","active":true,"filterlinks":false}
+]
