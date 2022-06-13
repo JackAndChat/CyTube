@@ -5,8 +5,8 @@
 */
 if (!window[CHANNEL.name]) window[CHANNEL.name] = {};
 
-// https://raw.githubusercontent.com/JackAndChat/CyTube/main/loader.1.0.3.js
-// https://raw.githubusercontent.com/JackAndChat/CyTube/main/www/roombot.js
+// https://raw.githubusercontent.com/jackandchat/cytube/main/loader.1.0.3.js
+// https://raw.githubusercontent.com/jackandchat/cytube/main/roombot.js
 
 // Defaults
 var START = Date.now();
@@ -31,8 +31,10 @@ let Favicon_URL = Room_URL + "favicon.png";
 // ##################################################################################################################################
 
 const loadScript = function(filename){
+  if (!CHANNEL_DEBUG) { filename += '.min'; }
+  filename += '.js';
+  
   try {
-    filename += '.js';
     $.getScript(filename)
       .done(function(script, textStatus) {
         window.console.log("loader.Loading " + filename + ": " + textStatus );
@@ -43,6 +45,9 @@ const loadScript = function(filename){
 }
 
 const loadCSS = function(filename){
+  if (!CHANNEL_DEBUG) { filename += '.min'; }
+  filename += '.css';
+  
   try {
     $("head").append('<link rel="stylesheet" type="text/css" href="' + filename + '?ac=' + START + '" />');
   } catch (e) {
@@ -73,8 +78,8 @@ if (!CUSTOM_LOADED) { // Load Once
     $(".navbar-brand").replaceWith('<span class="navbar-brand">' + ChannelName_Caption + "</span>");
     $("ul.navbar-nav li:contains('Home')").remove();
     
-    loadCSS(Base_URL + "base.css");
-    loadCSS(Room_URL + "custom.css");
+    loadCSS(Base_URL + "base");
+    loadCSS(Room_URL + "custom");
     $("#chancss").remove(); // No Conflicts
     $("#chanexternalcss").remove(); // No Conflicts
   });
