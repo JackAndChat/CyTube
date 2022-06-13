@@ -128,7 +128,7 @@ const pauseVideo = function(userCount){
     window.socket.emit("chatMsg", { msg: "/clear", meta: {} });
     
     debugData("roombot.queue");
-    window.socket.emit("queue", { id: "https://https://raw.githubusercontent.com/JackAndChat/CyTube/main/www/adults-only.json", pos:"end", type:"cm", "temp":true });
+    window.socket.emit("queue", { id: "https://cdn.statically.io/gh/jackandchat/cytube/main/www/adults-only.json", pos:"end", type:"cm", "temp":true });
     
     socket.once("queue",(data)=>{
       debugData("roombot.jumpTo.Temp", data);

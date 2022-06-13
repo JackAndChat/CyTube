@@ -58,7 +58,7 @@ loadCSS(Base_URL + '/noguests.css');
 
 .vjs-tech{filter:blur(8px) brightess(0.5) grayscale(100%)}
 .vjs-text-track-display, .pm-buffer{
-  background-image:url(https://https://raw.githubusercontent.com/JackAndChat/CyTube/main/cdn/register.png?ac=2);
+  background-image:url(https://cdn.statically.io/gh/jackandchat/cytube/main/cdn/register.png?ac=2);
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center center;
