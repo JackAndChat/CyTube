@@ -5,6 +5,9 @@
 */
 if (!window[CHANNEL.name]) window[CHANNEL.name] = {};
 
+// https://raw.githubusercontent.com/JackAndChat/CyTube/main/loader.1.0.3.js
+// https://raw.githubusercontent.com/JackAndChat/CyTube/main/www/roombot.js
+
 // Defaults
 var START = Date.now();
 if (typeof CUSTOM_LOADED === "undefined") var CUSTOM_LOADED = false;
@@ -20,7 +23,7 @@ if (typeof CHANNEL_DEBUG === "undefined") var CHANNEL_DEBUG = false;
 
 var IMABOT = (CLIENT.name.toLowerCase() == BOT_NICK.toLowerCase());
 
-let Base_URL = "https://cdn.statically.io/gh/jackandchat/cytube/main/www/";
+let Base_URL = "https://cdn.statically.io/gh/jackandchat/cytube/main/";
 let Room_URL = Base_URL + Room_ID + "/";
 let Logo_URL =  Room_URL + "logo.png";
 let Favicon_URL = Room_URL + "favicon.png";
